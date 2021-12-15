@@ -1,3 +1,5 @@
 ﻿  main.cpp
+C:\Users\tevin\Desktop\School Time\Assignments\Sem 3.2\Computer Graphics\OpenGLRoot\Mathtrix\Mathtrix\Shader.h(56,29): warning C4101: 'e': unreferenced local variable
+  The contents of <filesystem> are available only with C++17 or later.
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-  Mathtrix.vcxproj -> C:\Users\MaryAnn\Documents\ICS Year 3\3.2\CG\OpenGLRoot\Mathtrix\Debug\Mathtrix.exe
+  Mathtrix.vcxproj -> C:\Users\tevin\Desktop\School Time\Assignments\Sem 3.2\Computer Graphics\OpenGLRoot\Mathtrix\Debug\Mathtrix.exe
