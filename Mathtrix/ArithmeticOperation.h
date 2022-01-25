@@ -60,10 +60,11 @@ public:
 		}
 			break;
 
-		case 7: {
+		case 5: {
 			ans = op1 * op1;
 			int choice = rand() % 4;
 			int i = 0;
+			int x = 0;
 			for (i = 0; i < 4; i++)
 			{
 				if (i == choice)
@@ -71,7 +72,6 @@ public:
 					temp_map.emplace(i, ans);
 				}
 				else {
-					int x = 0;
 					switch (severity) {
 					case 1: {
 						x = rand() % 100;
@@ -92,7 +92,7 @@ public:
 		}
 			  break;
 
-		case 8: {
+		case 6: {
 			op1 = rand() % 5;
 			ans = op1 * op1 * op1;
 			int choice = rand() % 4;
@@ -125,7 +125,7 @@ public:
 		}
 			  break;
 
-		case 9: {
+		case 7: {
 			op1 *= op1;
 			ans = (int) sqrt(op1);
 			int choice = rand() % 4;
@@ -200,7 +200,7 @@ public:
 		}
 			  break;
 
-		case 7: {
+		case 5: {
 			int ans = op1 * op1;
 			if (ans == u_ans)
 			{
@@ -218,7 +218,7 @@ public:
 		}
 			  break;
 
-		case 8: {
+		case 6: {
 			int ans = op1 * op1 * op1;
 			if (ans == u_ans)
 			{
@@ -236,7 +236,7 @@ public:
 		}
 			  break;
 
-		case 9: {
+		case 7: {
 			int ans = (int) sqrt(op1);
 			if (ans == u_ans)
 			{
@@ -277,7 +277,7 @@ public:
 		}
 			break;
 
-		case 7: {
+		case 5: {
 			int ans = op1 * op1;
 			if (ans == key)
 			{
@@ -289,7 +289,7 @@ public:
 		}
 			  break;
 
-		case 8: {
+		case 6: {
 			int ans = op1 * op1 * op1;
 			if (ans == key)
 			{
@@ -301,7 +301,7 @@ public:
 		}
 			  break;
 
-		case 9: {
+		case 7: {
 			int ans = (int) sqrt(op1);
 			if (ans == key)
 			{

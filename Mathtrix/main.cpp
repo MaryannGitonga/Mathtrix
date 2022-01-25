@@ -73,7 +73,7 @@ int main()
 	TextRenderer txt("Fonts/Antonio-Bold.ttf");
 
 	// While window is open
-	aop.equationMaker(op1, op2, selpoint, choices, severity);
+//	aop.equationMaker(op1, op2, selpoint, choices, severity);
 	while (!glfwWindowShouldClose(window))
 	{
 		// input
@@ -162,7 +162,7 @@ int main()
 			{
 				string op1_s = to_string(op1);
 				txt.RenderText(shader, "Level 5: Squares", 540.0f, 570.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, op1_s + " ^2", 540.0f, 450.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, "What is " + op1_s + " squared?", 540.0f, 450.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
 				a = "A. " + to_string(choices[0]);
 				b = "B. " + to_string(choices[1]);
 				c = "C. " + to_string(choices[2]);
@@ -187,7 +187,7 @@ int main()
 			{
 				string op1_s = to_string(op1);
 				txt.RenderText(shader, "Level 6: Cubes", 540.0f, 570.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, op1_s + " ^3", 540.0f, 450.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, "What is " + op1_s + " cubed?", 540.0f, 450.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
 				a = "A. " + to_string(choices[0]);
 				b = "B. " + to_string(choices[1]);
 				c = "C. " + to_string(choices[2]);
@@ -213,7 +213,7 @@ int main()
 			{
 				string op1_s = to_string(op1);
 				txt.RenderText(shader, "Level 7: Square Root", 540.0f, 570.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, "Square root of " + op1_s, 540.0f, 450.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, "Square root of " + op1_s + " is?", 540.0f, 450.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
 				a = "A. " + to_string(choices[0]);
 				b = "B. " + to_string(choices[1]);
 				c = "C. " + to_string(choices[2]);
@@ -260,7 +260,7 @@ void keyCallBack(GLFWwindow* window, int key, int scancode, int action, int mods
 		switch (key)
 		{
 		case GLFW_KEY_ENTER:
-			nvt.enterController(refpoint, selpoint);
+			nvt.enterController(refpoint, selpoint, op1, op2, choices, severity);
 			std::cout << refpoint << std::endl;
 			break;
 		case GLFW_KEY_DOWN:
