@@ -35,6 +35,7 @@ public:
 		case 2:
 			ArithmeticOpertaion aop;
 			aop.equationMaker(op1, op2, selpoint, choices, severity);
+
 			refpoint += selpoint;
 			break;
 		default:

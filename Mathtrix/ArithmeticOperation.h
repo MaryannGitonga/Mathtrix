@@ -202,6 +202,103 @@ public:
 			}
 		}
 			  break;
+    case 5: {
+			ans = op1 * op1;
+			int choice = rand() % 4;
+			int i = 0;
+			int x = 0;
+			for (i = 0; i < 4; i++)
+			{
+				if (i == choice)
+				{
+					temp_map.emplace(i, ans);
+				}
+				else {
+					switch (severity) {
+					case 1: {
+						x = rand() % 100;
+					}
+						  break;
+					case 2: {
+						x = rand() % 200;
+					}
+						  break;
+					default: {
+						x = rand() % 20;
+					}
+						   break;
+					}
+					temp_map.emplace(i, x);
+				}
+			}
+		}
+			  break;
+
+		case 6: {
+			op1 = rand() % 5;
+			ans = op1 * op1 * op1;
+			int choice = rand() % 4;
+			int i = 0;
+			for (i = 0; i < 4; i++)
+			{
+				if (i == choice)
+				{
+					temp_map.emplace(i, ans);
+				}
+				else {
+					int x = 0;
+					switch (severity) {
+					case 1: {
+						x = rand() % 100;
+					}
+						  break;
+					case 2: {
+						x = rand() % 200;
+					}
+						  break;
+					default: {
+						x = rand() % 20;
+					}
+						   break;
+					}
+					temp_map.emplace(i, x);
+				}
+			}
+		}
+			  break;
+
+		case 7: {
+			op1 *= op1;
+			ans = (int) sqrt(op1);
+			int choice = rand() % 4;
+			int i = 0;
+			for (i = 0; i < 4; i++)
+			{
+				if (i == choice)
+				{
+					temp_map.emplace(i, ans);
+				}
+				else {
+					int x = 0;
+					switch (severity) {
+					case 1: {
+						x = rand() % 100;
+					}
+						  break;
+					case 2: {
+						x = rand() % 200;
+					}
+						  break;
+					default: {
+						x = rand() % 20;
+					}
+						   break;
+					}
+					temp_map.emplace(i, x);
+				}
+			}
+		}
+			  break;
 		default:
 			break;
 		}
@@ -295,6 +392,59 @@ public:
 			}
 		}
 			  break;
+    case 5: {
+			int ans = op1 * op1;
+			if (ans == u_ans)
+			{
+				score += 10;
+				if (score > 100) {
+					severity = 1;
+				}
+				else if (score > 200) {
+					severity = 2;
+				}
+			}
+			else {
+				menu = 1;
+			}
+		}
+			  break;
+
+		case 6: {
+			int ans = op1 * op1 * op1;
+			if (ans == u_ans)
+			{
+				score += 10;
+				if (score > 100) {
+					severity = 1;
+				}
+				else if (score > 200) {
+					severity = 2;
+				}
+			}
+			else {
+				menu = 1;
+			}
+		}
+			  break;
+
+		case 7: {
+			int ans = (int) sqrt(op1);
+			if (ans == u_ans)
+			{
+				score += 10;
+				if (score > 100) {
+					severity = 1;
+				}
+				else if (score > 200) {
+					severity = 2;
+				}
+			}
+			else {
+				menu = 1;
+			}
+		}
+			  break;
 		default:
 			break;
 		}
@@ -342,6 +492,41 @@ public:
 			  break;
 		case 4: {
 			int ans = op1 / op2;
+			if (ans == key)
+			{
+
+			}
+			else {
+				menu = 1;
+			}
+		}
+			  break;
+    case 5: {
+			int ans = op1 * op1;
+			if (ans == key)
+			{
+
+			}
+			else {
+				menu = 1;
+			}
+		}
+			  break;
+
+		case 6: {
+			int ans = op1 * op1 * op1;
+			if (ans == key)
+			{
+
+			}
+			else {
+				menu = 1;
+			}
+		}
+			  break;
+
+		case 7: {
+			int ans = (int) sqrt(op1);
 			if (ans == key)
 			{
 
