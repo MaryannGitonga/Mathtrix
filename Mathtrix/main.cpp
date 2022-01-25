@@ -22,6 +22,7 @@ int selpoint = 1;
 int op1 = 0;
 int op2 = 0;
 int ans = 0;
+int severity = 0;
 int score = 0;
 std::string a;
 std::string b;
@@ -72,7 +73,7 @@ int main()
 	TextRenderer txt("Fonts/Antonio-Bold.ttf");
 
 	// While window is open
-	aop.equationMaker(op1, op2, selpoint, choices);
+	aop.equationMaker(op1, op2, selpoint, choices, severity);
 	while (!glfwWindowShouldClose(window))
 	{
 		// input
@@ -208,7 +209,7 @@ void keyCallBack(GLFWwindow* window, int key, int scancode, int action, int mods
 			break;
 		default:
 			std::cout << key << std::endl;
-			aop.equationChecker(op1, op2, selpoint, key, menu_b, choices, score);
+			aop.equationChecker(op1, op2, selpoint, key, menu_b, choices, score, severity);
 			break;
 		}
 	}
