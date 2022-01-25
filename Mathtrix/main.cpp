@@ -3,18 +3,32 @@
 #include <iostream>
 #include <map>
 #include <glm/glm.hpp>
-
+#include <map>
 //Classes
 #include "Shader.h"
 #include "RenderText.h"
 #include "NavigationController.h"
+#include "ArithmeticOperation.h"
+std::map<int, int> choices;
 const unsigned int SCREEN_WIDTH = 1080;
 const unsigned int SCREEN_HEIGHT = 640;
 void keyCallBack(GLFWwindow* window, int key, int scancode, int action, int mods);
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+static void cursorPositionCallback(GLFWwindow *window, double xPos, double yPos);
 NavigationController nvt;
+ArithmeticOpertaion aop;
 int refpoint = 1;
 int selpoint = 1;
+int op1 = 0;
+int op2 = 0;
+int ans = 0;
+int score = 0;
+std::string a;
+std::string b;
+std::string c;
+std::string d;
+int menu_b = 0;
+string variable = "Mathrtix";
 //IMPORTANT
 
 //I changed the include links, so please change the, on your end
@@ -35,6 +49,7 @@ int main()
 	}
 	glfwMakeContextCurrent(window);
 	glfwSetKeyCallback(window, keyCallBack);
+	//glfwSetCursorPosCallback(window, cursorPositionCallback);
 	glewExperimental = GL_TRUE;
 	if (glewInit() != GLEW_OK)
 		printf("Error\n");
@@ -57,23 +72,23 @@ int main()
 	TextRenderer txt("Fonts/Antonio-Bold.ttf");
 
 	// While window is open
+	aop.equationMaker(op1, op2, selpoint, choices);
 	while (!glfwWindowShouldClose(window))
 	{
 		// input
+
 		nvt.processInput(window);
 
 		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 		switch (refpoint)
 		{
-		case 0:
-			glfwSetWindowShouldClose(window, true);
-			break;
 		case 1:
 			txt.RenderText(shader, "Welcome to the Jungle", 25.0f, 25.0f, 1.0f, glm::vec3(0.5, 0.8f, 0.2f));
 			txt.RenderText(shader, "MATHTRIX", 440.0f, 570.0f, 1.0f, glm::vec3(0.3, 0.7f, 0.9f));
 			break;
 		case 2:
+			menu_b = 0;
 			txt.RenderText(shader, "Level Select", 540.0f, 570.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
 			switch (selpoint)
 			{
@@ -103,8 +118,32 @@ int main()
 			}
 			break;
 		case 3:
-			txt.RenderText(shader, "Level Addition", 540.0f, 570.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-			//Where Functions will be called that'll provide operands
+		{
+			if (menu_b == 0)
+			{
+				txt.RenderText(shader, "Level 1: Addition", 540.0f, 570.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, "Add these two numbers:", 540.0f, 450.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				string op1_s = to_string(op1);
+				string op2_s = to_string(op2);
+				a = "A. " + to_string(choices[0]);
+				b = "B. " + to_string(choices[1]);
+				c = "C. " + to_string(choices[2]);
+				d = "D. " + to_string(choices[3]);
+				txt.RenderText(shader, op1_s, 400.0f, 400.0f, 1.0f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, op2_s, 800.0f, 400.0f, 1.0f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, a, 400.0f, 200.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, b, 400.0f, 150.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, c, 800.0f, 200.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, d, 800.0f, 150.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+			}
+			else
+			{
+				string s_score = "This is your score: "+to_string(score);
+				txt.RenderText(shader, "You've Failed: Press Escape", 150.0f, 450.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, s_score, 150.0f, 350.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+			}
+			
+		}
 			break;
 		case 4:
 			txt.RenderText(shader, "Level Subtraction", 540.0f, 570.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
@@ -144,7 +183,7 @@ int main()
 	return 0;
 }
 
-void framebuffer_size_callback(GLFWwindow* window, int width, int height)
+void framebuffer_size_callback(GLFWwindow *window, int width, int height)
 {
 	glViewport(0, 0, width, height);
 }
@@ -165,11 +204,16 @@ void keyCallBack(GLFWwindow* window, int key, int scancode, int action, int mods
 			nvt.KeyUController(refpoint, selpoint);
 			break;
 		case GLFW_KEY_ESCAPE:
-			nvt.escController(window, refpoint, selpoint);
+			nvt.escController(window, refpoint, selpoint, menu_b, score);
 			break;
 		default:
+			std::cout << key << std::endl;
+			aop.equationChecker(op1, op2, selpoint, key, menu_b, choices, score);
 			break;
 		}
 	}
 };
 
+void cursorPositionCallback(GLFWwindow *window, double xPos, double yPos) {
+	std::cout << xPos << ":" << yPos << std::endl;
+}

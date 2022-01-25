@@ -12,7 +12,7 @@ public:
 			glfwSetWindowShouldClose(window, true);
 		}
 	}
-	void escController(GLFWwindow* window, int& refpoint, int& selpoint) {
+	void escController(GLFWwindow* window, int& refpoint, int& selpoint, int& menu_b, int& score) {
 		if (refpoint == 1) {
 			glfwSetWindowShouldClose(window, true);
 		}
@@ -20,15 +20,22 @@ public:
 			refpoint -= 1;
 		}
 		else {
+			score = 0;
+			menu_b = 0;
 			refpoint = 2;
 		}
 	}
 	void enterController(int& refpoint, int& selpoint) {
-		if (refpoint == 1) {
+		switch (refpoint)
+		{
+		case 1:
 			refpoint += 1;
-		}
-		else if (refpoint == 2) {
+			break;
+		case 2:
 			refpoint += selpoint;
+			break;
+		default:
+			break;
 		}
 	}
 	void KeyUController(int& refpoint, int& selpoint) {

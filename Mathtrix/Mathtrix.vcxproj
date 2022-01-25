@@ -148,6 +148,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ArithmeticOperation.h" />
     <ClInclude Include="NavigationController.h" />
     <ClInclude Include="RenderText.h" />
     <ClInclude Include="Shader.h" />

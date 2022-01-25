@@ -29,5 +29,8 @@
     <ClInclude Include="NavigationController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ArithmeticOperation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
