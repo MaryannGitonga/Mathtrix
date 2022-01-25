@@ -10,22 +10,23 @@ public:
 		temp_map.clear();
 		switch (severity) {
 		case 1: {
-			op1 = rand() % 50;
-			op2 = rand() % 50;
+			op1 = 1 + (rand() % 50);
+			op2 = 1 + (rand() % 50);
 		}
 			 break;
 		case 2: {
-			op1 = rand() % 100;
-			op2 = rand() % 100;
+			op1 = 1 + (rand() % 100);
+			op2 = 1 + (rand() % 100);
 		}
 			  break;
 		default: {
-			op1 = rand() % 10;
-			op2 = rand() % 10;
+			op1 = 1 + (rand() % 10);
+			op2 = 1 + (rand() % 10);
 		}
 			break;
 		}
 		int ans;
+		int mod;
 		switch (selpoint)
 		{
 		case 1: {
@@ -59,8 +60,149 @@ public:
 			}
 		}
 			break;
+		case 2: {
+			ans = op1 - op2;
+			int choice = rand() % 4;
+			if (ans > 0) {
 
-		case 5: {
+			
+			int i = 0;
+			for (i = 0; i < 4; i++)
+			{
+				if (i == choice)
+				{
+					temp_map.emplace(i, ans);
+				}
+				else {
+					int x = 0;
+					switch (severity) {
+					case 1: {
+						x = rand() % 100;
+					}
+						  break;
+					case 2: {
+						x = rand() % 200;
+					}
+						  break;
+					default: {
+						x = rand() % 20;
+					}
+						   break;
+					}
+					temp_map.emplace(i, x);
+				}
+			}
+			}
+			else {
+				int i = 0;
+				for (i = 0; i < 4; i++)
+				{
+					if (i == choice)
+					{
+						temp_map.emplace(i, ans);
+					}
+					else {
+						int x = 0;
+						switch (severity) {
+						case 1: {
+							x = rand() % 100;
+							x = x * -1;
+						}
+							  break;
+						case 2: {
+							x = rand() % 200;
+							x = x * -1;
+						}
+							  break;
+						default: {
+							x = rand() % 20;
+							x = x * -1;
+						}
+							   break;
+						}
+						temp_map.emplace(i, x);
+					}
+				}
+			}
+		}
+			break;
+		case 3: {
+			ans = op1 * op2;
+			int choice = rand() % 4;
+			int i = 0;
+			for (i = 0; i < 4; i++)
+			{
+				if (i == choice)
+				{
+					temp_map.emplace(i, ans);
+				}
+				else {
+					int x = 0;
+					switch (severity) {
+					case 1: {
+						x = rand() % 100;
+					}
+						  break;
+					case 2: {
+						x = rand() % 200;
+					}
+						  break;
+					default: {
+						x = rand() % 100;
+					}
+						   break;
+					}
+					temp_map.emplace(i, x);
+				}
+			}
+		}
+			break;
+		case 4: {
+			while (op1 % op2 != 0) {
+				if (severity == 1) {
+					op1 = 1 + (rand() % 50);
+					op2 = 1 + (rand() % 50);
+				}
+				else if (severity == 2) {
+					op1 = 1 + (rand() % 100);
+					op2 = 1 + (rand() % 100);
+				}
+				else {
+					op1 = 1 + (rand() % 10);
+					op2 = 1 + (rand() % 10);
+				}
+			}
+			ans = op1 / op2;
+			int choice = rand() % 4;
+			int i = 0;
+			for (i = 0; i < 4; i++)
+			{
+				if (i == choice)
+				{
+					temp_map.emplace(i, ans);
+				}
+				else {
+					int x = 0;
+					switch (severity) {
+					case 1: {
+						x = rand() % 100;
+					}
+						  break;
+					case 2: {
+						x = rand() % 200;
+					}
+						  break;
+					default: {
+						x = rand() % 20;
+					}
+						   break;
+					}
+					temp_map.emplace(i, x);
+				}
+			}
+		}
+			  break;
+    case 5: {
 			ans = op1 * op1;
 			int choice = rand() % 4;
 			int i = 0;
@@ -199,8 +341,58 @@ public:
 			}
 		}
 			  break;
-
-		case 5: {
+		case 2: {
+			int ans = op1 - op2;
+			if (ans == u_ans)
+			{
+				score += 10;
+				if (score > 100) {
+					severity = 1;
+				}
+				else if (score > 200) {
+					severity = 2;
+				}
+			}
+			else {
+				menu = 1;
+			}
+		}
+			  break;
+		case 3: {
+			int ans = op1 * op2;
+			if (ans == u_ans)
+			{
+				score += 10;
+				if (score > 100) {
+					severity = 1;
+				}
+				else if (score > 200) {
+					severity = 2;
+				}
+			}
+			else {
+				menu = 1;
+			}
+		}
+			  break;
+		case 4: {
+			int ans = op1 / op2;
+			if (ans == u_ans)
+			{
+				score += 10;
+				if (score > 100) {
+					severity = 1;
+				}
+				else if (score > 200) {
+					severity = 2;
+				}
+			}
+			else {
+				menu = 1;
+			}
+		}
+			  break;
+    case 5: {
 			int ans = op1 * op1;
 			if (ans == u_ans)
 			{
@@ -276,8 +468,40 @@ public:
 			}
 		}
 			break;
+		case 2: {
+			int ans = op1 - op2;
+			if (ans == key)
+			{
 
-		case 5: {
+			}
+			else {
+				menu = 1;
+			}
+		}
+			  break;
+		case 3: {
+			int ans = op1 * op2;
+			if (ans == key)
+			{
+
+			}
+			else {
+				menu = 1;
+			}
+		}
+			  break;
+		case 4: {
+			int ans = op1 / op2;
+			if (ans == key)
+			{
+
+			}
+			else {
+				menu = 1;
+			}
+		}
+			  break;
+    case 5: {
 			int ans = op1 * op1;
 			if (ans == key)
 			{

@@ -145,17 +145,89 @@ int main()
 		}
 			break;
 		case 4:
-			txt.RenderText(shader, "Level Subtraction", 540.0f, 570.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-			//Where Functions will be called that'll provide operands
-			break;
+		{
+			if (menu_b == 0)
+			{
+				txt.RenderText(shader, "Level 2: Subtraction", 540.0f, 570.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, "Subtract these two numbers:", 540.0f, 450.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				string op1_s = to_string(op1);
+				string op2_s = to_string(op2);
+				a = "A. " + to_string(choices[0]);
+				b = "B. " + to_string(choices[1]);
+				c = "C. " + to_string(choices[2]);
+				d = "D. " + to_string(choices[3]);
+				txt.RenderText(shader, op1_s, 400.0f, 400.0f, 1.0f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, op2_s, 800.0f, 400.0f, 1.0f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, a, 400.0f, 200.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, b, 400.0f, 150.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, c, 800.0f, 200.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, d, 800.0f, 150.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+			}
+			else
+			{
+				string s_score = "This is your score: " + to_string(score);
+				txt.RenderText(shader, "You've Failed: Press Escape", 150.0f, 450.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, s_score, 150.0f, 350.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+			}
+
+		}
+		break;
 		case 5:
-			txt.RenderText(shader, "Level Multiplication", 540.0f, 570.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-			//Where Functions will be called that'll provide operands
-			break;
+		{
+			if (menu_b == 0)
+			{
+				txt.RenderText(shader, "Level 3: Multiplication", 540.0f, 570.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, "Multiply these two numbers:", 540.0f, 450.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				string op1_s = to_string(op1);
+				string op2_s = to_string(op2);
+				a = "A. " + to_string(choices[0]);
+				b = "B. " + to_string(choices[1]);
+				c = "C. " + to_string(choices[2]);
+				d = "D. " + to_string(choices[3]);
+				txt.RenderText(shader, op1_s, 400.0f, 400.0f, 1.0f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, op2_s, 800.0f, 400.0f, 1.0f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, a, 400.0f, 200.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, b, 400.0f, 150.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, c, 800.0f, 200.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, d, 800.0f, 150.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+			}
+			else
+			{
+				string s_score = "This is your score: " + to_string(score);
+				txt.RenderText(shader, "You've Failed: Press Escape", 150.0f, 450.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, s_score, 150.0f, 350.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+			}
+
+		}
+		break;
 		case 6:
-			txt.RenderText(shader, "Level Division", 540.0f, 570.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-			//Where Functions will be called that'll provide operands
-			break;
+		{
+			if (menu_b == 0)
+			{
+				txt.RenderText(shader, "Level 4: Division", 540.0f, 570.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, "Divide these two numbers:", 540.0f, 450.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				string op1_s = to_string(op1);
+				string op2_s = to_string(op2);
+				a = "A. " + to_string(choices[0]);
+				b = "B. " + to_string(choices[1]);
+				c = "C. " + to_string(choices[2]);
+				d = "D. " + to_string(choices[3]);
+				txt.RenderText(shader, op1_s, 400.0f, 400.0f, 1.0f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, op2_s, 800.0f, 400.0f, 1.0f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, a, 400.0f, 200.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, b, 400.0f, 150.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, c, 800.0f, 200.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, d, 800.0f, 150.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+			}
+			else
+			{
+				string s_score = "This is your score: " + to_string(score);
+				txt.RenderText(shader, "You've Failed: Press Escape", 150.0f, 450.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, s_score, 150.0f, 350.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+			}
+
+		}
+		break;
 		case 7:
 		{
 			if (menu_b == 0)
