@@ -4,6 +4,7 @@
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
+#include "ArithmeticOperation.h"
 class NavigationController {
 public:
 	void processInput(GLFWwindow* window)
@@ -25,13 +26,15 @@ public:
 			refpoint = 2;
 		}
 	}
-	void enterController(int& refpoint, int& selpoint) {
+	void enterController(int& refpoint, int& selpoint, int& op1, int& op2, std::map<int,int>& choices, int& severity) {
 		switch (refpoint)
 		{
 		case 1:
 			refpoint += 1;
 			break;
 		case 2:
+			ArithmeticOpertaion aop;
+			aop.equationMaker(op1, op1, selpoint, choices, severity);
 			refpoint += selpoint;
 			break;
 		default:
