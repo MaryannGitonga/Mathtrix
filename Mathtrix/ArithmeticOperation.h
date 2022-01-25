@@ -6,10 +6,25 @@
 #include <GLFW/glfw3.h>
 class ArithmeticOpertaion {
 public:
-	void equationMaker(int& op1, int& op2, int& selpoint, std::map<int, int>& temp_map) {
+	void equationMaker(int& op1, int& op2, int& selpoint, std::map<int, int>& temp_map, int& severity) {
 		temp_map.clear();
-		op1 = rand() % 10;
-		op2 = rand() % 10;
+		switch (severity) {
+		case 1: {
+			op1 = rand() % 50;
+			op2 = rand() % 50;
+		}
+			 break;
+		case 2: {
+			op1 = rand() % 100;
+			op2 = rand() % 100;
+		}
+			  break;
+		default: {
+			op1 = rand() % 10;
+			op2 = rand() % 10;
+		}
+			break;
+		}
 		int ans;
 		switch (selpoint)
 		{
@@ -24,7 +39,21 @@ public:
 					temp_map.emplace(i, ans);
 				}
 				else {
-					int x = rand() % 20;
+					int x = 0;
+					switch (severity) {
+						case 1: {
+							x = rand() % 100;
+						}
+							  break;
+						case 2: {
+							x = rand() % 200;
+						}
+							  break;
+						default: {
+							x = rand() % 20;
+						}
+							   break;
+					}
 					temp_map.emplace(i, x);
 				}
 			}
@@ -34,7 +63,7 @@ public:
 			break;
 		}
 	}
-	void equationChecker(int& op1, int& op2, int& selpoint, int key,int& menu, std::map<int, int>& temp_map, int& score) {
+	void equationChecker(int& op1, int& op2, int& selpoint, int key,int& menu, std::map<int, int>& temp_map, int& score, int& severity) {
 		int u_ans=0;
 		switch (key)
 		{
@@ -60,6 +89,12 @@ public:
 			if (ans == u_ans)
 			{
 				score += 10;
+				if (score > 100) {
+					severity = 1;
+				}
+				else if (score > 200) {
+					severity = 2;
+				}
 			}
 			else {
 				menu = 1;
@@ -69,7 +104,7 @@ public:
 		default:
 			break;
 		}
-		equationMaker(op1, op2, selpoint, temp_map);
+		equationMaker(op1, op2, selpoint, temp_map, severity);
 	}
 	void NumberGenerator(int& op1, int& op2) {
 		op1 = rand() % 10;
