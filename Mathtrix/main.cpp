@@ -82,37 +82,44 @@ int main()
 
 		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
+		
+		
 		switch (refpoint)
 		{
 		case 1:
-			txt.RenderText(shader, "Welcome to the Jungle", 25.0f, 25.0f, 1.0f, glm::vec3(0.5, 0.8f, 0.2f));
-			txt.RenderText(shader, "MATHTRIX", 440.0f, 570.0f, 1.0f, glm::vec3(0.3, 0.7f, 0.9f));
+			txt.RenderText(shader, "MATHTRIX", 440.0f, 570.0f, 1.0f, glm::vec3(0.89, 0.29f, 0.27f));
+			txt.RenderText(shader, "GROUP 3", 460.0f, 500.0f, 0.8f, glm::vec3(1.0f, 0.63f, 0.48f));
+			txt.RenderText(shader, "115325 Dennis Kipkorir Koech", 300.0f, 400.0f, 0.5f, glm::vec3(0.93, 0.91f, 0.67f));
+			txt.RenderText(shader, "097770 Gitonga MaryAnn Mwendwa", 300.0f, 320.0f, 0.5f, glm::vec3(0.93, 0.91f, 0.67f));
+			txt.RenderText(shader, "121800 Wariua Nicholas Kanyi", 300.0f, 240.0f, 0.5f, glm::vec3(0.93, 0.91f, 0.67f));
+			txt.RenderText(shader, "118640 Tevin Musau Mutua", 300.0f, 160.0f, 0.5f, glm::vec3(0.93, 0.91f, 0.67f));
+			txt.RenderText(shader, "Welcome to the Jungle", 600.0f, 25.0f, 0.8f, glm::vec3(0.16, 0.67f, 0.53f)); //0.5, 0.8f, 0.2f
 			break;
 		case 2:
 			menu_b = 0;
-			txt.RenderText(shader, "Level Select", 540.0f, 570.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+			txt.RenderText(shader, "Level Select", 460.0f, 540.0f, 0.8f, glm::vec3(1.0f, 0.63f, 0.48f));
 			switch (selpoint)
 			{
 			case 1:
-				txt.RenderText(shader, "Level Addition", 540.0f, 250.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, "Level 1: Addition", 470.0f, 450.0f, 0.5f, glm::vec3(0.93f, 0.91f, 0.67f));
 				break;
 			case 2:
-				txt.RenderText(shader, "Level Subtraction", 540.0f, 250.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, "Level 2: Subtraction", 470.0f, 450.0f, 0.5f, glm::vec3(0.93f, 0.91f, 0.67f));
 				break;
 			case 3:
-				txt.RenderText(shader, "Level Multiplication", 540.0f, 250.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, "Level 3: Multiplication", 470.0f, 450.0f, 0.5f, glm::vec3(0.93f, 0.91f, 0.67f));
 				break;
 			case 4:
-				txt.RenderText(shader, "Level Division", 540.0f, 250.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, "Level 4: Division", 470.0f, 450.0f, 0.5f, glm::vec3(0.93f, 0.91f, 0.67f));
 				break;
 			case 5:
-				txt.RenderText(shader, "Level Squares", 540.0f, 250.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, "Level 5: Squares", 470.0f, 450.0f, 0.5f, glm::vec3(0.93f, 0.91f, 0.67f));
 				break;
 			case 6:
-				txt.RenderText(shader, "Level Cubes", 540.0f, 250.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, "Level 6: Cubes", 470.0f, 450.0f, 0.5f, glm::vec3(0.93f, 0.91f, 0.67f));
 				break;
 			case 7:
-				txt.RenderText(shader, "Level Square Root", 540.0f, 250.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, "Level 7: Square Root", 470.0f, 450.0f, 0.5f, glm::vec3(0.93f, 0.91f, 0.67f));
 				break;
 			default:
 				break;
@@ -124,22 +131,22 @@ int main()
 			{
 				string op1_s = to_string(op1);
 				string op2_s = to_string(op2);
-				txt.RenderText(shader, "Level 1: Addition", 540.0f, 570.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, op1_s + " + " + op2_s, 540.0f, 450.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, "Level 1: Addition", 460.0f, 540.0f, 0.8f, glm::vec3(1.0f, 0.63f, 0.48f));
+				txt.RenderText(shader, "Add the following numbers: " + op1_s + " + " + op2_s, 430.0f, 450.0f, 0.5f, glm::vec3(0.93f, 0.91f, 0.67f));
 				a = "A. " + to_string(choices[0]);
 				b = "B. " + to_string(choices[1]);
 				c = "C. " + to_string(choices[2]);
 				d = "D. " + to_string(choices[3]);
-				txt.RenderText(shader, a, 400.0f, 400.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, b, 400.0f, 350.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, c, 800.0f, 400.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, d, 800.0f, 350.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, a, 470.0f, 380.0f, 0.5f, glm::vec3(0.19, 0.8f, 0.19f));
+				txt.RenderText(shader, b, 470.0f, 320.0f, 0.5f, glm::vec3(0.19, 0.8f, 0.19f));
+				txt.RenderText(shader, c, 600.0f, 380.0f, 0.5f, glm::vec3(0.19, 0.8f, 0.19f));
+				txt.RenderText(shader, d, 600.0f, 320.0f, 0.5f, glm::vec3(0.19, 0.8f, 0.19f));
 			}
 			else
 			{
 				string s_score = "This is your score: "+to_string(score);
-				txt.RenderText(shader, "Game Over! Press Escape", 150.0f, 450.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, s_score, 150.0f, 350.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, "Game Over! Press Escape", 150.0f, 450.0f, 0.5f, glm::vec3(1.0f, 0.0f, 0.0f));
+				txt.RenderText(shader, s_score, 150.0f, 350.0f, 0.5f, glm::vec3(0.19, 0.8f, 0.19f));
 			}
 			
 		}
@@ -148,26 +155,26 @@ int main()
 		{
 			if (menu_b == 0)
 			{
-				txt.RenderText(shader, "Level 2: Subtraction", 540.0f, 570.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, "Subtract these two numbers:", 540.0f, 450.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
 				string op1_s = to_string(op1);
 				string op2_s = to_string(op2);
+				txt.RenderText(shader, "Level 2: Subtraction", 460.0f, 540.0f, 0.8f, glm::vec3(1.0f, 0.63f, 0.48f));
+				txt.RenderText(shader, "Subtract the following numbers: " + op1_s + " - " + op2_s, 430.0f, 450.0f, 0.5f, glm::vec3(0.93f, 0.91f, 0.67f));
 				a = "A. " + to_string(choices[0]);
 				b = "B. " + to_string(choices[1]);
 				c = "C. " + to_string(choices[2]);
 				d = "D. " + to_string(choices[3]);
-				txt.RenderText(shader, op1_s, 400.0f, 400.0f, 1.0f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, op2_s, 800.0f, 400.0f, 1.0f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, a, 400.0f, 200.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, b, 400.0f, 150.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, c, 800.0f, 200.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, d, 800.0f, 150.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				//txt.RenderText(shader, op1_s, 400.0f, 400.0f, 1.0f, glm::vec3(0.3, 0.7f, 0.9f));
+				//txt.RenderText(shader, op2_s, 800.0f, 400.0f, 1.0f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, a, 470.0f, 380.0f, 0.5f, glm::vec3(0.19, 0.8f, 0.19f));
+				txt.RenderText(shader, b, 470.0f, 320.0f, 0.5f, glm::vec3(0.19, 0.8f, 0.19f));
+				txt.RenderText(shader, c, 600.0f, 380.0f, 0.5f, glm::vec3(0.19, 0.8f, 0.19f));
+				txt.RenderText(shader, d, 600.0f, 320.0f, 0.5f, glm::vec3(0.19, 0.8f, 0.19f));
 			}
 			else
 			{
 				string s_score = "This is your score: " + to_string(score);
-				txt.RenderText(shader, "You've Failed: Press Escape", 150.0f, 450.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, s_score, 150.0f, 350.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, "Game Over! Press Escape", 150.0f, 450.0f, 0.5f, glm::vec3(1.0f, 0.0f, 0.0f));
+				txt.RenderText(shader, s_score, 150.0f, 350.0f, 0.5f, glm::vec3(0.19, 0.8f, 0.19f));
 			}
 
 		}
@@ -176,26 +183,26 @@ int main()
 		{
 			if (menu_b == 0)
 			{
-				txt.RenderText(shader, "Level 3: Multiplication", 540.0f, 570.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, "Multiply these two numbers:", 540.0f, 450.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
 				string op1_s = to_string(op1);
 				string op2_s = to_string(op2);
+				txt.RenderText(shader, "Level 3: Multiplication", 460.0f, 540.0f, 0.8f, glm::vec3(1.0f, 0.63f, 0.48f));
+				txt.RenderText(shader, "Multiply the following numbers: " + op1_s + " x " + op2_s, 430.0f, 450.0f, 0.5f, glm::vec3(0.93f, 0.91f, 0.67f));
 				a = "A. " + to_string(choices[0]);
 				b = "B. " + to_string(choices[1]);
 				c = "C. " + to_string(choices[2]);
 				d = "D. " + to_string(choices[3]);
-				txt.RenderText(shader, op1_s, 400.0f, 400.0f, 1.0f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, op2_s, 800.0f, 400.0f, 1.0f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, a, 400.0f, 200.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, b, 400.0f, 150.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, c, 800.0f, 200.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, d, 800.0f, 150.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				//txt.RenderText(shader, op1_s, 400.0f, 400.0f, 1.0f, glm::vec3(0.3, 0.7f, 0.9f));
+				//txt.RenderText(shader, op2_s, 800.0f, 400.0f, 1.0f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, a, 470.0f, 380.0f, 0.5f, glm::vec3(0.19, 0.8f, 0.19f));
+				txt.RenderText(shader, b, 470.0f, 320.0f, 0.5f, glm::vec3(0.19, 0.8f, 0.19f));
+				txt.RenderText(shader, c, 600.0f, 380.0f, 0.5f, glm::vec3(0.19, 0.8f, 0.19f));
+				txt.RenderText(shader, d, 600.0f, 320.0f, 0.5f, glm::vec3(0.19, 0.8f, 0.19f));
 			}
 			else
 			{
 				string s_score = "This is your score: " + to_string(score);
-				txt.RenderText(shader, "You've Failed: Press Escape", 150.0f, 450.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, s_score, 150.0f, 350.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, "Game Over! Press Escape", 150.0f, 450.0f, 0.5f, glm::vec3(1.0f, 0.0f, 0.0f));
+				txt.RenderText(shader, s_score, 150.0f, 350.0f, 0.5f, glm::vec3(0.19, 0.8f, 0.19f));
 			}
 
 		}
@@ -204,26 +211,26 @@ int main()
 		{
 			if (menu_b == 0)
 			{
-				txt.RenderText(shader, "Level 4: Division", 540.0f, 570.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, "Divide these two numbers:", 540.0f, 450.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
 				string op1_s = to_string(op1);
 				string op2_s = to_string(op2);
+				txt.RenderText(shader, "Level 4: Division", 460.0f, 540.0f, 0.8f, glm::vec3(1.0f, 0.63f, 0.48f));
+				txt.RenderText(shader, "Divide the following numbers: " + op1_s + " / " + op2_s, 430.0f, 450.0f, 0.5f, glm::vec3(0.93f, 0.91f, 0.67f));
 				a = "A. " + to_string(choices[0]);
 				b = "B. " + to_string(choices[1]);
 				c = "C. " + to_string(choices[2]);
 				d = "D. " + to_string(choices[3]);
-				txt.RenderText(shader, op1_s, 400.0f, 400.0f, 1.0f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, op2_s, 800.0f, 400.0f, 1.0f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, a, 400.0f, 200.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, b, 400.0f, 150.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, c, 800.0f, 200.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, d, 800.0f, 150.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				//txt.RenderText(shader, op1_s, 400.0f, 400.0f, 1.0f, glm::vec3(0.3, 0.7f, 0.9f));
+				//txt.RenderText(shader, op2_s, 800.0f, 400.0f, 1.0f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, a, 470.0f, 380.0f, 0.5f, glm::vec3(0.19, 0.8f, 0.19f));
+				txt.RenderText(shader, b, 470.0f, 320.0f, 0.5f, glm::vec3(0.19, 0.8f, 0.19f));
+				txt.RenderText(shader, c, 600.0f, 380.0f, 0.5f, glm::vec3(0.19, 0.8f, 0.19f));
+				txt.RenderText(shader, d, 600.0f, 320.0f, 0.5f, glm::vec3(0.19, 0.8f, 0.19f));
 			}
 			else
 			{
 				string s_score = "This is your score: " + to_string(score);
-				txt.RenderText(shader, "You've Failed: Press Escape", 150.0f, 450.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, s_score, 150.0f, 350.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, "Game Over! Press Escape", 150.0f, 450.0f, 0.5f, glm::vec3(1.0f, 0.0f, 0.0f));
+				txt.RenderText(shader, s_score, 150.0f, 350.0f, 0.5f, glm::vec3(0.19, 0.8f, 0.19f));
 			}
 
 		}
@@ -233,22 +240,22 @@ int main()
 			if (menu_b == 0)
 			{
 				string op1_s = to_string(op1);
-				txt.RenderText(shader, "Level 5: Squares", 540.0f, 570.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, "What is " + op1_s + " squared?", 540.0f, 450.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, "Level 5: Squares", 460.0f, 540.0f, 0.8f, glm::vec3(1.0f, 0.63f, 0.48f));
+				txt.RenderText(shader, "What is " + op1_s + " Squared?", 430.0f, 450.0f, 0.5f, glm::vec3(0.93f, 0.91f, 0.67f));
 				a = "A. " + to_string(choices[0]);
 				b = "B. " + to_string(choices[1]);
 				c = "C. " + to_string(choices[2]);
 				d = "D. " + to_string(choices[3]);
-				txt.RenderText(shader, a, 400.0f, 400.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, b, 400.0f, 350.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, c, 800.0f, 400.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, d, 800.0f, 350.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, a, 470.0f, 380.0f, 0.5f, glm::vec3(0.19, 0.8f, 0.19f));
+				txt.RenderText(shader, b, 470.0f, 320.0f, 0.5f, glm::vec3(0.19, 0.8f, 0.19f));
+				txt.RenderText(shader, c, 600.0f, 380.0f, 0.5f, glm::vec3(0.19, 0.8f, 0.19f));
+				txt.RenderText(shader, d, 600.0f, 320.0f, 0.5f, glm::vec3(0.19, 0.8f, 0.19f));
 			}
 			else
 			{
 				string s_score = "This is your score: " + to_string(score);
-				txt.RenderText(shader, "Game Over! Press Escape", 150.0f, 450.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, s_score, 150.0f, 350.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, "Game Over! Press Escape", 150.0f, 450.0f, 0.5f, glm::vec3(1.0f, 0.0f, 0.0f));
+				txt.RenderText(shader, s_score, 150.0f, 350.0f, 0.5f, glm::vec3(0.19, 0.8f, 0.19f));
 			}
 
 		}
@@ -258,22 +265,22 @@ int main()
 			if (menu_b == 0)
 			{
 				string op1_s = to_string(op1);
-				txt.RenderText(shader, "Level 6: Cubes", 540.0f, 570.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, "What is " + op1_s + " cubed?", 540.0f, 450.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, "Level 6: Cubes", 460.0f, 540.0f, 0.8f, glm::vec3(1.0f, 0.63f, 0.48f));
+				txt.RenderText(shader, "What is " + op1_s + " Cubed?", 430.0f, 450.0f, 0.5f, glm::vec3(0.93f, 0.91f, 0.67f));
 				a = "A. " + to_string(choices[0]);
 				b = "B. " + to_string(choices[1]);
 				c = "C. " + to_string(choices[2]);
 				d = "D. " + to_string(choices[3]);
-				txt.RenderText(shader, a, 400.0f, 400.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, b, 400.0f, 350.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, c, 800.0f, 400.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, d, 800.0f, 350.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, a, 470.0f, 380.0f, 0.5f, glm::vec3(0.19, 0.8f, 0.19f));
+				txt.RenderText(shader, b, 470.0f, 320.0f, 0.5f, glm::vec3(0.19, 0.8f, 0.19f));
+				txt.RenderText(shader, c, 600.0f, 380.0f, 0.5f, glm::vec3(0.19, 0.8f, 0.19f));
+				txt.RenderText(shader, d, 600.0f, 320.0f, 0.5f, glm::vec3(0.19, 0.8f, 0.19f));
 			}
 			else
 			{
 				string s_score = "This is your score: " + to_string(score);
-				txt.RenderText(shader, "Game Over! Press Escape", 150.0f, 450.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, s_score, 150.0f, 350.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, "Game Over! Press Escape", 150.0f, 450.0f, 0.5f, glm::vec3(1.0f, 0.0f, 0.0f));
+				txt.RenderText(shader, s_score, 150.0f, 350.0f, 0.5f, glm::vec3(0.19, 0.8f, 0.19f));
 			}
 
 		}
@@ -284,22 +291,22 @@ int main()
 			if (menu_b == 0)
 			{
 				string op1_s = to_string(op1);
-				txt.RenderText(shader, "Level 7: Square Root", 540.0f, 570.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, "Square root of " + op1_s + " is?", 540.0f, 450.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, "Level 7: Square Root", 460.0f, 540.0f, 0.8f, glm::vec3(1.0f, 0.63f, 0.48f));
+				txt.RenderText(shader, "Square Root of " + op1_s + " is?", 430.0f, 450.0f, 0.5f, glm::vec3(0.93f, 0.91f, 0.67f));
 				a = "A. " + to_string(choices[0]);
 				b = "B. " + to_string(choices[1]);
 				c = "C. " + to_string(choices[2]);
 				d = "D. " + to_string(choices[3]);
-				txt.RenderText(shader, a, 400.0f, 400.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, b, 400.0f, 350.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, c, 800.0f, 400.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, d, 800.0f, 350.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, a, 470.0f, 380.0f, 0.5f, glm::vec3(0.19, 0.8f, 0.19f));
+				txt.RenderText(shader, b, 470.0f, 320.0f, 0.5f, glm::vec3(0.19, 0.8f, 0.19f));
+				txt.RenderText(shader, c, 600.0f, 380.0f, 0.5f, glm::vec3(0.19, 0.8f, 0.19f));
+				txt.RenderText(shader, d, 600.0f, 320.0f, 0.5f, glm::vec3(0.19, 0.8f, 0.19f));
 			}
 			else
 			{
 				string s_score = "This is your score: " + to_string(score);
-				txt.RenderText(shader, "Game Over! Press Escape", 150.0f, 450.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
-				txt.RenderText(shader, s_score, 150.0f, 350.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f));
+				txt.RenderText(shader, "Game Over! Press Escape", 150.0f, 450.0f, 0.5f, glm::vec3(1.0f, 0.0f, 0.0f));
+				txt.RenderText(shader, s_score, 150.0f, 350.0f, 0.5f, glm::vec3(0.19, 0.8f, 0.19f));
 			}
 
 		}

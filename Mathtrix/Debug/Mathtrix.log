@@ -1,4 +1,5 @@
 ﻿  main.cpp
-C:\Users\alumn\Desktop\Sem 3.2 Assignments\COMPUTER GRAPHICS\OpenGL Root Folder\Mathtrix\Mathtrix\Shader.h(56,29): warning C4101: 'e': unreferenced local variable
+C:\Users\tevin\Desktop\School Time\Assignments\Sem 3.2\Computer Graphics\OpenGLRoot\Mathtrix\Mathtrix\Shader.h(56,29): warning C4101: 'e': unreferenced local variable
   The contents of <filesystem> are available only with C++17 or later.
-  Mathtrix.vcxproj -> C:\Users\alumn\Desktop\Sem 3.2 Assignments\COMPUTER GRAPHICS\OpenGL Root Folder\Mathtrix\Debug\Mathtrix.exe
+C:\Users\tevin\Desktop\School Time\Assignments\Sem 3.2\Computer Graphics\OpenGLRoot\Mathtrix\Mathtrix\ArithmeticOperation.h(29,7): warning C4101: 'mod': unreferenced local variable
+  Mathtrix.vcxproj -> C:\Users\tevin\Desktop\School Time\Assignments\Sem 3.2\Computer Graphics\OpenGLRoot\Mathtrix\Debug\Mathtrix.exe
